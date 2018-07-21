@@ -8,7 +8,7 @@ var bluebird = require('bluebird');
 
 var api = require('./routes/api.route');
 
-var url = "mongodb://127.0.0.1:27017/courses";
+var url = process.env.database_url;
 
 mongoose.Promise = bluebird;
 mongoose.connect(url)
