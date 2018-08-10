@@ -27,7 +27,7 @@ exports.createCourse= async function(course) {
         status: course.status,
         print: course.print
     });
-
+    console.log("newCourse", newCourse);
     try {
         var saveCourse = await newCourse.save();
         return saveCourse;
@@ -84,4 +84,4 @@ exports.removeCourse = async function(id) {
     catch(e) {
         throw Error('Error occurred while deleting that');
     }
-} 
+}

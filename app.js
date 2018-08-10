@@ -8,7 +8,7 @@ var bluebird = require('bluebird');
 
 var api = require('./routes/api.route');
 
-var url = process.env.database_url;
+var url = "mongodb://gagan:Arihant_90@ds119422.mlab.com:19422/heroku_cljj3dlk";
 
 mongoose.Promise = bluebird;
 mongoose.connect(url)
@@ -26,7 +26,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   next();
