@@ -9,7 +9,7 @@ var bluebird = require('bluebird');
 
 var api = require('./routes/api.route');
 
-var url = config.get(process.env.NODE_URL).databaseUrl;
+var url = config.get(process.env.NODE_ENV).databaseUrl;
 console.log(url);
 
 mongoose.Promise = bluebird;
