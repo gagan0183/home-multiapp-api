@@ -3,12 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var config = require('./config/config');
 var mongoose = require('mongoose');
 var bluebird = require('bluebird');
 
 var api = require('./routes/api.route');
 
-var url = "mongodb://gagan:Arihant_90@ds119422.mlab.com:19422/heroku_cljj3dlk";
+var url = config.get(process.env.NODE_URL).databaseUrl;
+console.log(url);
 
 mongoose.Promise = bluebird;
 mongoose.connect(url)
